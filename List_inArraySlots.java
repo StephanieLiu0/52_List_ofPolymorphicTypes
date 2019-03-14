@@ -46,14 +46,28 @@ public class List_inArraySlots {
      */
      public boolean add( Object value) {
          // expand if necessary
-         if( filledElements == elements.length) expand();
-
+         if( filledElements == elements.length)
+	     expand();
          elements[ filledElements] = value;
          filledElements++;
          // idiomatic version: elements[ filledElements++] = value;
 	 return true;
      }
 
+     //overloaded add methods, allows us to pass primitives
+     //(easier to use)
+     public boolean add(int intValue) {
+         return add(Integer.valueOf(intValue));
+     } //valueOf turns intValue into an Integer
+       //so it can be stored in an array of Objects
+
+     public boolean add(double doubleValue) {
+         return add(Double.valueOf(doubleValue));
+     } //similar concept as adding the int.
+
+     public boolean add(boolean booleanValue) {
+	 return add(Boolean.valueOf(booleanValue));
+     }
 
     /**
       Double the capacity of the List_inArraySlots,
@@ -82,7 +96,6 @@ public class List_inArraySlots {
     public Object get( int index ) {
 	return elements[index];
     }
-
     
     /**
       Set value at @index to @newValue
@@ -111,11 +124,25 @@ public class List_inArraySlots {
 	 filledElements++;
 	 elements[index] = value;
      }
+	
+     //same concept as the add methods without the index
+     public void add(int index, int intValue) {
+         add(index, Integer.valueOf(intValue));
+     }
+
+     public void add(int index, double doubleValue) {
+         add(index, Double.valueOf(doubleValue));
+     }
+
+     public void add(int index, boolean booleanValue) {
+	 add(index, Boolean.valueOf(booleanValue));
+     }
 
     /**
       Remove the element at position @index in this list.
 
-      Shift any subsequent elements to the left (that is,
+      Shift any subsequent elements to the 
+      left (that is,
       decrease the index associated with each).
 
       @return the value that was removed from the list
