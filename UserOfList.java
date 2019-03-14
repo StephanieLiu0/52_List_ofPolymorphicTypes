@@ -31,13 +31,13 @@ public class UserOfList {
             list.add(-elemIndex);
             System.out.println( "number of elements: " + list.size() );
         }
-        System.out.println("result of expanded list: "
+
+	// Add Boolean type
+	list.add(true);
+	list.add(false);
+
+	System.out.println("result of expanded list: "
              + list.size() + " elements:");
         System.out.println( list + System.lineSeparator());
-
-	// Test get method
-        for( int elemIndex = list.size() - 1; elemIndex >= 0; elemIndex-- )
-	    System.out.println( elemIndex + ": "
-				+ list.get(elemIndex));			      	    
     }
 }
