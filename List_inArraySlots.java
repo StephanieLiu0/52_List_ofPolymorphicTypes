@@ -138,6 +138,11 @@ public class List_inArraySlots {
 	 add(index, Boolean.valueOf(booleanValue));
      }
 
+    //add value at beginning
+    public void addAsHead(Object value) {
+	add(0, value);
+    }
+
     /**
       Remove the element at position @index in this list.
 

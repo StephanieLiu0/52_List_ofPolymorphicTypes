@@ -23,21 +23,36 @@ public class UserOfList {
         System.out.println( "number of elements: " + list.size() );
         System.out.println( "added double: " + list);
 
-        // Add enough elements that expansion is expected
-        for( int elemIndex = list.size(); elemIndex < 15; elemIndex++ ) {
+        // // Add enough elements that expansion is expected
+        // for( int elemIndex = list.size(); elemIndex < 15; elemIndex++ ) {
 
-            if( list.size() == 10) System.out.println( "expansion expected");
+        //     if( list.size() == 10) System.out.println( "expansion expected");
 
-            list.add(-elemIndex);
-            System.out.println( "number of elements: " + list.size() );
-        }
+        //     list.add(-elemIndex);
+        //     System.out.println( "number of elements: " + list.size() );
+        // }
 
-	// Add Boolean type
-	list.add(true);
-	list.add(false);
+	// // Add Boolean type
+	// list.add(true);
+	// list.add(false);
 
-	System.out.println("result of expanded list: "
-             + list.size() + " elements:");
-        System.out.println( list + System.lineSeparator());
+	// System.out.println("result of expanded list: "
+        //      + list.size() + " elements:");
+        // System.out.println( list + System.lineSeparator());
+
+	// Test addAsHead method
+	list.addAsHead("red");
+        System.out.println( "number of elements: " + list.size() );
+        System.out.println( "added string to beginning: " + list);
+
+	list.addAsHead(20);
+        System.out.println( "number of elements: " + list.size() );
+        System.out.println( "added int to beginning: " + list);
+	
+	list.addAsHead(4.08);
+        System.out.println( "number of elements: " + list.size() );
+        System.out.println( "added double to beginning: " + list);
+	
+	
     }
 }
